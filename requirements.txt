@@ -4,3 +4,4 @@ schedule==1.1.0
 python-dateutil==2.8.1
 tqdm==4.49.0
 flask==1.1.2
+gunicorn==20.1.0
