@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0 --log-level debug app:app
+web: gunicorn --log-level debug app:app
