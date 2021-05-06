@@ -54,7 +54,7 @@ def crawl_and_write_to_file(rss_dict=rss_dict):
     tqdm.write("Batch crawling")
     for item in tqdm(rss_dict):
         titles = crawl_for_titles(rss_dict[item])
-        with open("./data/" + item + ".txt", 'a+') as f:
+        with open(args.path + "/" + item + ".txt", 'a+') as f:
             for title in titles:
                 f.write(title + "\n")
     print("Finished at", datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
