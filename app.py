@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 @app.route("/download")
 def download():
-    path = "./corpus.txt"
+    path = "corpus.txt"
     return send_file(path, as_attachment=True)
 
 
