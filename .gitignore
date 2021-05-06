@@ -130,3 +130,7 @@ dmypy.json
 
 # IDE
 .vscode/
+
+# data
+data/
+corpus.txt

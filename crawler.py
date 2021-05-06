@@ -22,10 +22,9 @@ from addresses import rss_dict
 
 
 parser = argparse.ArgumentParser(description='Configs for the crawler.')
-parser.add_argument('--path', dest="path", default="./data",
-                    help='the path to store crawled data')
-parser.add_argument('--time', dest="time", default="11:20",
-                    help='the time the crawler will run everyday')
+parser.add_argument('--path', dest="path", default="./data", help='the path to store crawled data')
+parser.add_argument('--time', dest="time", default="11:20", help='the time the crawler will run everyday')
+parser.add_argument('--crawl_once', dest='crawl_once', default=False, help='Crawl periodically or just once')
 
 args = parser.parse_args()
 
@@ -61,8 +60,10 @@ def crawl_and_write_to_file(rss_dict=rss_dict):
 
 
 if __name__ == '__main__':
-    # crawl_and_write_to_file()
-    schedule.every().day.at(args.time).do(crawl_and_write_to_file)
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    if args.crawl_once:
+        crawl_and_write_to_file()
+    else:
+        schedule.every().day.at(args.time).do(crawl_and_write_to_file)
+        while True:
+            schedule.run_pending()
+            time.sleep(1)
