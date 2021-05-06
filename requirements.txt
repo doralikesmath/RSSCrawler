@@ -1,1 +1,2 @@
 feedparser==6.0.2
+feedsearch_crawler==1.0.0
