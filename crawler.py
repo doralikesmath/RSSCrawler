@@ -65,7 +65,7 @@ def crawl_and_write_to_file(rss_dict=rss_dict):
             with open(args.path + "/" + item + ".txt", 'a+') as f:
                 for title in titles:
                     f.write(title + "\n")
-                    
+
     tqdm.write("Batch crawling")
     for item in tqdm(rss_dict):
         titles = crawl_for_titles(rss_dict[item])
@@ -80,7 +80,8 @@ if __name__ == '__main__':
     if args.crawl_once:
         crawl_and_write_to_file()
     else:
-        schedule.every().day.at(args.time).do(crawl_and_write_to_file)
+        # schedule.every().day.at(args.time).do(crawl_and_write_to_file)
+        schedule.every().hour.at(":00").do(crawl_and_write_to_file)
         while True:
             schedule.run_pending()
             time.sleep(1)

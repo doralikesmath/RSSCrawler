@@ -1,44 +1,58 @@
 rss_dict = {
-    "csvn": "https://dangcongsan.vn/so-do-website",
-    "rfa": "https://www.rfa.org/vietnamese/rss",
-    "lifefinance": "https://www.litefinance.com/vi/rss/",
-    "afamily": "https://afamily.vn/rss.chn",
-    "bongda": "https://www.bongda.com.vn/main-rss.html",
-    "vnexpress": "https://vnexpress.net/rss",
-    "thanh_nien": "https://thanhnien.vn/rss/",
-    "nguoi_lao_dong": "https://nld.com.vn/rss/",
-    "lao_dong": "https://laodong.vn/rss",
-    "cafebiz": "https://cafebiz.vn/rss.chn",
     "24h": "https://www.24h.com.vn/guest/RSS/",
-    "gamek": "https://gamek.vn/rss.chn",
-    "vietnamnet": "http://vietnamnet.vn/vn/rss/",
-    "tuoi_tre": "https://tuoitre.vn/rss.htm",
-    "dan_tri": "http://dantri.com.vn/rss.htm",
-    "soha": "http://soha.vn/rss.htm",
-    "game4v": "http://game4v.com/feed",
-    "vtv": "https://vtv.vn/rss.htm",
-    "the_thao_van_hoa": "https://thethaovanhoa.vn/rss.rss",
-    "bao_tin_tuc": "https://baotintuc.vn/rss.rss",
-    "ttxvn": "https://vnanet.vn/vi/rss/",
-    "tai_chinh_viet_nam": "https://vietnamfinance.vn/rss.htm",
+    "afamily": "https://afamily.vn/rss.chn",
+    "antv": "https://www.antv.gov.vn/rss.html",
     "bao_chinh_phu": "https://baochinhphu.vn/Rss/",
-    "tien_phong": "https://www.tienphong.vn/rss.tpo",
-    "bao_phap_luat": "https://baophapluat.vn/rss.html",
-    "dan_viet": "https://danviet.vn/danh-muc.rss",
-    "tri_thuc": "https://trithucvn.org/rssfeed",
-    "vtc_news": "https://vtc.vn/main-rss.html",
     "bao_dan_toc": "https://baodantoc.vn/rss.htm",
+    "bao_phap_luat": "https://baophapluat.vn/rss.html",
+    "bao_tin_tuc": "https://baotintuc.vn/rss.rss",
+    "bongda": "https://www.bongda.com.vn/main-rss.html",
+    "cafebiz": "https://cafebiz.vn/rss.chn",
+    "csvn": "https://dangcongsan.vn/so-do-website",
+    "dan_tri": "http://dantri.com.vn/rss.htm",
+    "dan_viet": "https://danviet.vn/danh-muc.rss",
+    "game4v": "http://game4v.com/feed",
+    "gamek": "https://gamek.vn/rss.chn",
+    "lao_dong": "https://laodong.vn/rss",
+    "nguoi_lao_dong": "https://nld.com.vn/rss/",
+    "soha": "http://soha.vn/rss.htm",
     "stockbiz": "https://www.stockbiz.vn/RSS.aspx",
-    "vepf": "https://vepf.vn/vi/rss.html",
-    "bao_hiem_xa_hoi": "https://baohiemxahoi.gov.vn/pages/rss.aspx",
-    "vass": "https://vass.gov.vn/pages/rss.aspx",
-    "voa": "https://www.voatiengviet.com/rssfeeds",
+    "tai_chinh_viet_nam": "https://vietnamfinance.vn/rss.htm",
+    "thanh_nien": "https://thanhnien.vn/rss/",
+    "the_thao_van_hoa": "https://thethaovanhoa.vn/rss.rss",
+    "tien_phong": "https://www.tienphong.vn/rss.tpo",
     "tieu_dung_viet_nam": "https://tieudungvietnam.vn/rss.html",
-    "antv": "https://www.antv.gov.vn/rss.html"
+    "tri_thuc": "https://trithucvn.org/rssfeed",
+    "ttxvn": "https://vnanet.vn/vi/rss/",
+    "tuoi_tre": "https://tuoitre.vn/rss.htm",
+    "vepf": "https://vepf.vn/vi/rss.html",
+    "vietnamnet": "http://vietnamnet.vn/vn/rss/",
+    "vnexpress": "https://vnexpress.net/rss",
+    "voa": "https://www.voatiengviet.com/rssfeeds",
+    "vtc_news": "https://vtc.vn/main-rss.html",
+    "vtv": "https://vtv.vn/rss.htm",
 }
 
+
 single_feeds = {
-    "trainghiemso": ["https://trainghiemso.vn/feed/"],
+    "bao_hiem_xa_hoi": [
+        "https://baohiemxahoi.gov.vn/pages/chi-tiet-kenh-rss.aspx?ItemID=2",
+        "https://baohiemxahoi.gov.vn/pages/chi-tiet-kenh-rss.aspx?ItemID=3",
+        "https://baohiemxahoi.gov.vn/pages/chi-tiet-kenh-rss.aspx?ItemID=7",
+        "https://baohiemxahoi.gov.vn/pages/chi-tiet-kenh-rss.aspx?ItemID=10"
+    ],
+    "rfa": [
+        "https://www.rfa.org/vietnamese/rss2.xml"
+    ],
+    "trainghiemso": [
+        "https://trainghiemso.vn/feed/"
+    ],
+    "vaas": [
+        "https://vass.gov.vn/noidung/rss/Lists/RssChannel/View_Detail.aspx?ItemID=5",
+        "https://vass.gov.vn/noidung/rss/Lists/RssChannel/View_Detail.aspx?ItemID=27",
+        "https://vass.gov.vn/noidung/rss/Lists/RssChannel/View_Detail.aspx?ItemID=32",
+        "https://vass.gov.vn/noidung/rss/Lists/RssChannel/View_Detail.aspx?ItemID=25"
+    ],
     "vov1": [
         "http://vov1.vov.gov.vn/Feed.aspx?CatId=2",
         "http://vov1.vov.gov.vn/Feed.aspx?CatId=3",
@@ -108,5 +122,12 @@ single_feeds = {
     #     "https://vov3.vov.gov.vn/Feed.aspx?CatId=4",
     #     "https://vov3.vov.gov.vn/Feed.aspx?CatId=5",
     #     "https://vov3.vov.gov.vn/Feed.aspx?CatId=6"
-    # ]   
+    # ]
 }
+
+
+# if __name__ == "__main__":
+#     rss_item = rss_dict.items()
+#     rss_sorted = sorted(rss_item)
+#     for k, v in rss_sorted:
+#         print("\"{}\": \"{}\",".format(k, v))
