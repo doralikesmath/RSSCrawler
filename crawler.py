@@ -81,7 +81,7 @@ if __name__ == '__main__':
         crawl_and_write_to_file()
     else:
         # schedule.every().day.at(args.time).do(crawl_and_write_to_file)
-        schedule.every().hour.at(":00").do(crawl_and_write_to_file)
+        schedule.every().hour.at(":15").do(crawl_and_write_to_file)
         while True:
             schedule.run_pending()
             time.sleep(1)
