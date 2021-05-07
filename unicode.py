@@ -11,6 +11,9 @@
                                 ║          `--------'`---' `----''     ©2021  ║
                                 ╚═════════════════════════════════════════════╝
 """
+import unicodedata
+
+
 DECOMPOSED = [
     ['à', 'à'],
     ['á', 'á'],
@@ -98,6 +101,26 @@ NORMALIZE = [
 ]
 
 
+SPECIAL_IA = [
+    ["ia", "ia"],
+    ["ía", "iá"],
+    ["ìa", "ià"],
+    ["ỉa", "iả"],
+    ["ĩa", "iã"],
+    ["ịa", "iạ"]
+]
+
+
+SPECIAL_UA = [
+    ["ua", "ua"],
+    ["úa", "uá"],
+    ["ùa", "uà"],
+    ["ủa", "uả"],
+    ["ũa", "uã"],
+    ["ụa", "uạ"]
+]
+
+
 def to_precomposed(text):
     for i in range(len(DECOMPOSED)):
         text = text.replace(DECOMPOSED[i][0], DECOMPOSED[i][1])
@@ -105,6 +128,39 @@ def to_precomposed(text):
 
 
 def normalize_tone_marks(text):
+    # easy cases
     for i in range(len(NORMALIZE)):
         text = text.replace(NORMALIZE[i][0], NORMALIZE[i][1])
+    # special cases
+    words = text.split(" ")
+    for j in range(len(words)):
+        for i in range(len(SPECIAL_IA)):
+            if SPECIAL_IA[i][0] in text:
+                if words[j][0] == 'g':
+                    words[j] = words[j].replace(SPECIAL_IA[i][0], SPECIAL_IA[i][1])
+                    break
+
+            if SPECIAL_IA[i][1] in text:
+                if words[j][0] != 'g':
+                    words[j] = words[j].replace(SPECIAL_IA[i][1], SPECIAL_IA[i][0])
+                    break
+
+            if SPECIAL_UA[i][0] in text:
+                if words[j][0] == 'q':
+                    words[j] = words[j].replace(SPECIAL_UA[i][0], SPECIAL_UA[i][1])
+                    break
+
+            if SPECIAL_UA[i][1] in text:
+                if words[j][0] != 'q':
+                    words[j] = words[j].replace(SPECIAL_UA[i][1], SPECIAL_UA[i][0])
+                    break
+    text = " ".join(words)
     return text
+
+
+if __name__=="__main__":
+    print(normalize_tone_marks("họa"))
+    print(normalize_tone_marks("quá"))
+    print(normalize_tone_marks("qúa"))
+    print(normalize_tone_marks("múa"))
+    print(normalize_tone_marks("muà"))
